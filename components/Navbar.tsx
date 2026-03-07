@@ -15,7 +15,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="font-bold text-xl tracking-tight text-zinc-900 dark:text-zinc-50"
           >
-            Aditya<span className="text-zinc-500 dark:text-zinc-400">.</span>
+            <span className="text-zinc-500 dark:text-zinc-400">Aditya Pandey</span>
           </motion.div>
         </Link>
 
