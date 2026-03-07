@@ -15,7 +15,6 @@ export default function ThemeToggle() {
       className="p-2 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 transition-colors"
       aria-label="Toggle Dark Mode"
     >
-      {/* We render both icons but hide/show them based on the active class */}
       <Sun className="h-5 w-5 hidden dark:block text-zinc-50" />
       <Moon className="h-5 w-5 block dark:hidden text-zinc-900" />
     </motion.button>
