@@ -26,7 +26,7 @@ export default function CodingProfiles() {
   ];
 
   return (
-    <section id="dsa" className="py-24 px-6 max-w-6xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
+    <section id="dsa" className="pt-24 pb-12 px-6 max-w-6xl mx-auto border-t border-zinc-200 dark:border-zinc-800">
       
       {/* Section Header */}
       <motion.div
