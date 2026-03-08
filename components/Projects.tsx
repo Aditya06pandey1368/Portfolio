@@ -15,8 +15,8 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="mb-20"
       >
-        <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-4">
-          Featured Work.
+        <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-4">
+          Featured Work
         </h2>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
           A selection of production-grade systems and technical architectures.
