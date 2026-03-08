@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-// We use Inter for a highly technical, readable, professional look
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // suppressHydrationWarning is required by next-themes to work properly
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      {/* We apply the dark mode background and text colors directly here */}
+      <body className={`${inter.className} bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 antialiased transition-colors duration-300`}>
         <Providers>
           {children}
         </Providers>

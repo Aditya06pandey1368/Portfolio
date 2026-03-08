@@ -1,17 +1,10 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    /* Light mode: crisp off-white background, almost-black text */
-    @apply bg-zinc-50 text-zinc-900 antialiased transition-colors duration-300;
-  }
-  
-  /* Dark mode: deep black background, crisp off-white text */
-  .dark body {
-    @apply bg-zinc-950 text-zinc-50;
-  }
+/* The official Tailwind v4 custom variant for class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
 
-  /* Universal hard borders for that technical, non-AI look */
+@layer base {
+  /* Universal hard borders */
   * {
     @apply border-zinc-200 dark:border-zinc-800;
   }
