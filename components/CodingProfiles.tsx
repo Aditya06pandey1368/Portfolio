@@ -10,8 +10,8 @@ export default function CodingProfiles() {
       icon: "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg",
       link: "https://leetcode.com/u/AdityaPandey1368/",
       metrics: [
-        { label: "Max Rating", value: "1806" },
-        { label: "Problems Solved", value: "400+" }
+        { label: "Max Rating", value: "1835" },
+        { label: "Problems Solved", value: "450+" }
       ]
     },
     {
@@ -19,7 +19,7 @@ export default function CodingProfiles() {
       icon: "https://img.icons8.com/color/512/codechef.png",
       link: "https://www.codechef.com/users/grey_matter_06",
       metrics: [
-        { label: "Max Rating", value: "3 Star" },
+        { label: "Max Rating", value: "2 Star" },
         { label: "Focus", value: "Competitive Logic" }
       ]
     }
