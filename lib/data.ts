@@ -29,6 +29,15 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    title: "EmbedAI",
+    description: "An enterprise-grade hybrid microservices platform utilizing FastAPI and Node.js. It features a Semantic Deduplication Layer using vector embeddings to autonomously block spam and route civic complaints with a Human-in-the-Loop ML pipeline.",
+    image: "/images/ai-grievance.png", // Keep as a fallback just in case YouTube fails
+    video: "https://www.youtube.com/embed/Fa_mEbzCFNQ", 
+    github: "https://github.com/Aditya06pandey1368/EmbedAI",
+    liveLink: null, 
+  },
+  {
+    id: 2,
     title: "AI-Grievance Intelligence System",
     description: "An enterprise-grade hybrid microservices platform utilizing FastAPI and Node.js. It features a Semantic Deduplication Layer using vector embeddings to autonomously block spam and route civic complaints with a Human-in-the-Loop ML pipeline.",
     image: "/images/ai-grievance.png", // Keep as a fallback just in case YouTube fails
@@ -37,7 +46,7 @@ export const projects = [
     liveLink: null, 
   },
   {
-    id: 2,
+    id: 3,
     title: "ScholarHub - LMS Platform",
     description: "A production-ready Learning Management System featuring Stripe payment infrastructure, Cloudinary video streaming, and an AI tutor powered by the Gemini API. Optimized with MongoDB Compound Indexing to reduce query times by 40%.",
     image: "/images/scholarhub.png", // Keep as a fallback
