@@ -145,29 +145,14 @@ export default function Hero() {
               />
             </div>
 
-            {/* Floating 3-D chip that lifts above the card */}
-            <div
-              className="absolute -bottom-5 -right-5 px-3 py-1.5 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 text-[11px] font-mono font-bold tracking-widest uppercase select-none"
-              style={{ transform: "translateZ(50px)" }}
-            >
-              B.Tech CSE &apos;27
-            </div>
+            
           </TiltCard>
         </motion.div>
 
         {/* ── Right: Text content ── */}
         <div className="flex-1 flex flex-col items-start text-left">
 
-          {/* Availability badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 text-[11px] font-mono font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Open to internships
-          </motion.div>
+          
 
           {/* Name — scrambles on hover */}
           <motion.h1
