@@ -11,11 +11,12 @@ function TiltCard({ children }: { children: React.ReactNode }) {
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
 
-  const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [14, -14]), {
+  // ✅ Increased tilt range
+  const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [22, -22]), {
     stiffness: 280,
     damping: 28,
   });
-  const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-14, 14]), {
+  const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-22, 22]), {
     stiffness: 280,
     damping: 28,
   });
@@ -93,12 +94,12 @@ export default function Hero() {
   );
 
   return (
-    <section className="relative pt-40 pb-24 px-6 max-w-5xl mx-auto min-h-[95vh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative pt-40 pb-24 px-6 min-h-[95vh] flex flex-col items-center justify-center overflow-hidden">
 
-      {/* Dot-grid background — pure SVG, zero gradients */}
+      {/* ✅ FULL WIDTH DOT BACKGROUND (FIXED) */}
       <svg
         aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 w-screen h-full left-1/2 -translate-x-1/2"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -116,10 +117,10 @@ export default function Hero() {
         <rect width="100%" height="100%" fill="url(#hero-dots)" />
       </svg>
 
-      {/* Main layout */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center gap-14 md:gap-20 w-full">
+      {/* ❗ KEEP YOUR ORIGINAL LAYOUT EXACTLY */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-14 md:gap-20 w-full max-w-5xl mx-auto">
 
-        {/* ── Left: Photo with 3-D tilt ── */}
+        {/* ── Left: Photo ── */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -128,11 +129,9 @@ export default function Hero() {
           style={{ perspective: "1000px" }}
         >
           <TiltCard>
-            {/* Hard-offset shadow — the "no gradient" depth trick */}
             <div
-              className="relative w-52 h-52 md:w-[280px] md:h-[280px] overflow-hidden border border-zinc-300 dark:border-zinc-700 rounded-full"
+              className="relative w-52 h-52 md:w-[300px] md:h-[300px] overflow-hidden border border-zinc-300 dark:border-zinc-700 rounded-full"
               style={{
-                boxShadow: "8px 8px 0px 0px #18181b",
                 transform: "translateZ(0px)",
               }}
             >
@@ -144,17 +143,12 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-
-
           </TiltCard>
         </motion.div>
 
-        {/* ── Right: Text content ── */}
+        {/* ── Right: Text (UNCHANGED) ── */}
         <div className="flex-1 flex flex-col items-start text-left">
 
-
-
-          {/* Name — scrambles on hover */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -184,7 +178,7 @@ export default function Hero() {
             AI-powered product features.
           </motion.p>
 
-          {/* CTA buttons */}
+          {/* CTA buttons (UNCHANGED) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -218,7 +212,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll cue */}
+      {/* Scroll cue (UNCHANGED) */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
