@@ -66,8 +66,8 @@ function useScramble(original: string) {
             char === " "
               ? " "
               : i < step
-              ? char
-              : CHARSET[Math.floor(Math.random() * CHARSET.length)]
+                ? char
+                : CHARSET[Math.floor(Math.random() * CHARSET.length)]
           )
           .join("")
       );
@@ -130,7 +130,7 @@ export default function Hero() {
           <TiltCard>
             {/* Hard-offset shadow — the "no gradient" depth trick */}
             <div
-              className="relative w-52 h-52 md:w-[280px] md:h-[280px] overflow-hidden border border-zinc-300 dark:border-zinc-700"
+              className="relative w-52 h-52 md:w-[280px] md:h-[280px] overflow-hidden border border-zinc-300 dark:border-zinc-700 rounded-full"
               style={{
                 boxShadow: "8px 8px 0px 0px #18181b",
                 transform: "translateZ(0px)",
@@ -145,14 +145,14 @@ export default function Hero() {
               />
             </div>
 
-            
+
           </TiltCard>
         </motion.div>
 
         {/* ── Right: Text content ── */}
         <div className="flex-1 flex flex-col items-start text-left">
 
-          
+
 
           {/* Name — scrambles on hover */}
           <motion.h1
