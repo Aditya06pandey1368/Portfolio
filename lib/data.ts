@@ -31,16 +31,16 @@ export const projects = [
     id: 1,
     title: "EmbedAI",
     description: "B2B SaaS platform that enables businesses to deploy custom AI chatbots trained on their own documents and embed them on any website via a single script tag, powered by a production-grade RAG pipeline with HNSW-indexed vector search and multi-tenant data isolation.",
-    image: "https://youtu.be/j3iijUtAZ2c?si=bJPuBdqNkDdkKVU-", // Keep as a fallback just in case YouTube fails
-    video: "https://youtu.be/j3iijUtAZ2c?si=bJPuBdqNkDdkKVU-", 
-    github: "https://github.com/Aditya06pandey1368/EmbedAI",
+    image: "https://img.youtube.com/vi/j3iijUtAZ2c/maxresdefault.jpg",
+    video: "https://www.youtube.com/embed/j3iijUtAZ2c", 
+    github: "https://github.com/Aditya06pandey1368/EmbedAI", 
     liveLink: "https://embed-ai-nu.vercel.app/", 
   },
   {
     id: 2,
     title: "AI-Grievance Intelligence System",
     description: "An enterprise-grade hybrid microservices platform utilizing FastAPI and Node.js. It features a Semantic Deduplication Layer using vector embeddings to autonomously block spam and route civic complaints with a Human-in-the-Loop ML pipeline.",
-    image: "/images/ai-grievance.png", // Keep as a fallback just in case YouTube fails
+    image: "https://img.youtube.com/vi/Fa_mEbzCFNQ/maxresdefault.jpg", // Keep as a fallback
     video: "https://www.youtube.com/embed/Fa_mEbzCFNQ", 
     github: "https://github.com/Aditya06pandey1368/AI-Grievance-System",
     liveLink: null, 
@@ -49,7 +49,7 @@ export const projects = [
     id: 3,
     title: "ScholarHub - LMS Platform",
     description: "A production-ready Learning Management System featuring Stripe payment infrastructure, Cloudinary video streaming, and an AI tutor powered by the Gemini API. Optimized with MongoDB Compound Indexing to reduce query times by 40%.",
-    image: "/images/scholarhub.png", // Keep as a fallback
+    image: "https://img.youtube.com/vi/s6PmXxvdVZ0/maxresdefault.jpg", // Keep as a fallback
     video: "https://www.youtube.com/embed/s6PmXxvdVZ0", 
     github: "https://github.com/Aditya06pandey1368/LMS-Project",
     liveLink: "https://lms-project-frontend-bdbm.onrender.com/",
