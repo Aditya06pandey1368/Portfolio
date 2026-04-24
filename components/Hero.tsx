@@ -1,85 +1,254 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useState, useRef, useCallback } from "react";
+import { ArrowDown } from "lucide-react";
 
-export default function Hero() {
+/* ─── 3D Tilt wrapper ──────────────────────────────────────────────────── */
+function TiltCard({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(rawY, [-0.5, 0.5], [14, -14]), {
+    stiffness: 280,
+    damping: 28,
+  });
+  const rotateY = useSpring(useTransform(rawX, [-0.5, 0.5], [-14, 14]), {
+    stiffness: 280,
+    damping: 28,
+  });
+
+  const onMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (!ref.current) return;
+      const rect = ref.current.getBoundingClientRect();
+      rawX.set((e.clientX - rect.left) / rect.width - 0.5);
+      rawY.set((e.clientY - rect.top) / rect.height - 0.5);
+    },
+    [rawX, rawY]
+  );
+
+  const onMouseLeave = useCallback(() => {
+    rawX.set(0);
+    rawY.set(0);
+  }, [rawX, rawY]);
+
   return (
-    <section className="pt-40 pb-20 px-6 max-w-5xl mx-auto min-h-[90vh] flex items-center justify-center">
-      <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 w-full">
-        
-        {/* 1. The Photo Container */}
+    <motion.div
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── Text scramble on hover ───────────────────────────────────────────── */
+const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%";
+
+function useScramble(original: string) {
+  const [display, setDisplay] = useState(original);
+  const rafRef = useRef<number>(0);
+
+  const scramble = useCallback(() => {
+    let step = 0;
+    const total = original.length;
+
+    const tick = () => {
+      setDisplay(
+        original
+          .split("")
+          .map((char, i) =>
+            char === " "
+              ? " "
+              : i < step
+              ? char
+              : CHARSET[Math.floor(Math.random() * CHARSET.length)]
+          )
+          .join("")
+      );
+      step += 0.45;
+      if (step < total) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        setDisplay(original);
+      }
+    };
+
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(tick);
+  }, [original]);
+
+  return { display, scramble };
+}
+
+/* ─── Hero ─────────────────────────────────────────────────────────────── */
+export default function Hero() {
+  const { display: nameDisplay, scramble: scrambleName } = useScramble(
+    "Hi, I'm Aditya Pandey."
+  );
+
+  return (
+    <section className="relative pt-40 pb-24 px-6 max-w-5xl mx-auto min-h-[95vh] flex flex-col items-center justify-center overflow-hidden">
+
+      {/* Dot-grid background — pure SVG, zero gradients */}
+      <svg
+        aria-hidden
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="hero-dots"
+            x="0"
+            y="0"
+            width="28"
+            height="28"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="1.5" cy="1.5" r="1.5" fill="#a1a1aa" fillOpacity="0.25" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-dots)" />
+      </svg>
+
+      {/* Main layout */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-14 md:gap-20 w-full">
+
+        {/* ── Left: Photo with 3-D tilt ── */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-          className="flex-shrink-0 relative group"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, type: "spring", stiffness: 100 }}
+          className="flex-shrink-0"
+          style={{ perspective: "1000px" }}
         >
-          <div className="relative w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-zinc-200 dark:border-zinc-800 transition-colors group-hover:border-zinc-300 dark:group-hover:border-zinc-700">
-            <Image
-              src="/images/me.png"
-              alt="Aditya Pandey"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
+          <TiltCard>
+            {/* Hard-offset shadow — the "no gradient" depth trick */}
+            <div
+              className="relative w-52 h-52 md:w-[280px] md:h-[280px] overflow-hidden border border-zinc-300 dark:border-zinc-700"
+              style={{
+                boxShadow: "8px 8px 0px 0px #18181b",
+                transform: "translateZ(0px)",
+              }}
+            >
+              <Image
+                src="/images/me.png"
+                alt="Aditya Pandey"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+
+            {/* Floating 3-D chip that lifts above the card */}
+            <div
+              className="absolute -bottom-5 -right-5 px-3 py-1.5 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 text-[11px] font-mono font-bold tracking-widest uppercase select-none"
+              style={{ transform: "translateZ(50px)" }}
+            >
+              B.Tech CSE &apos;27
+            </div>
+          </TiltCard>
         </motion.div>
 
-        {/* 2. The Text Content */}
-        <div className="flex-1 flex flex-col items-start text-center md:text-left">
-          
+        {/* ── Right: Text content ── */}
+        <div className="flex-1 flex flex-col items-start text-left">
+
+          {/* Availability badge */}
           <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 text-[11px] font-mono font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Open to internships
+          </motion.div>
+
+          {/* Name — scrambles on hover */}
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            onMouseEnter={scrambleName}
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-mono tracking-tight text-zinc-900 dark:text-zinc-50 mb-3 leading-tight cursor-default select-none"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 mb-2 leading-tight">
-              Hi, I'm Aditya Pandey.
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-zinc-500 dark:text-zinc-400 mb-6 tracking-tight">
-              Full-Stack Developer
-            </h2>
-          </motion.div>
-          
-          <motion.p 
+            {nameDisplay}
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-xl md:text-2xl font-semibold text-zinc-500 dark:text-zinc-400 mb-6 tracking-tight"
+          >
+            Full-Stack Developer & AI Builder
+          </motion.h2>
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mb-10 leading-relaxed mx-auto md:mx-0"
+            className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mb-10 leading-relaxed"
           >
-            Building scalable web applications with MERN and Next.js, and exploring AI-powered product features.
+            Building scalable web applications with Next.js and MERN, and exploring
+            AI-powered product features.
           </motion.p>
 
-          <motion.div 
+          {/* CTA buttons */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap gap-4 mx-auto md:mx-0"
+            className="flex flex-wrap gap-4"
           >
-            <motion.a 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href="#projects" 
-              className="px-6 py-3 bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
+            <motion.a
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.97 }}
+              href="#projects"
+              className="group flex items-center gap-2 px-6 py-3 bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900 font-semibold text-sm hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors"
             >
               View Projects
+              <span className="transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
             </motion.a>
-            
-            {/* UPDATED: Contact Me Button */}
-            <motion.a 
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              href="mailto:aaditya06pandey@gmail.com" 
-              className="px-6 py-3 bg-transparent text-zinc-900 dark:text-zinc-50 font-medium border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+
+            <motion.a
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.97 }}
+              href="mailto:aaditya06pandey@gmail.com"
+              className="group flex items-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-50 font-semibold text-sm hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
             >
               Contact Me
+              <span className="transition-transform duration-200 group-hover:translate-x-1">
+                ↗
+              </span>
             </motion.a>
           </motion.div>
         </div>
-
       </div>
+
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-zinc-400 dark:text-zinc-600"
+      >
+        <span className="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+        >
+          <ArrowDown className="w-3.5 h-3.5" />
+        </motion.div>
+      </motion.div>
+
     </section>
   );
 }
