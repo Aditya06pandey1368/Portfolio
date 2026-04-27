@@ -1,29 +1,115 @@
 // lib/data.ts
 
 export const skills = [
-  // Core Languages
-  { name: "Java", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
-  { name: "TypeScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
-  { name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
-  { name: "JavaScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
-  
-  // Frontend & State Management
-  { name: "Next.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
-  { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
-  { name: "Redux Toolkit", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" },
-  { name: "Tailwind CSS", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
-  
-  // Backend & AI
-  { name: "Node.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
-  { name: "Express.js", image: "https://www.peanutsquare.com/wp-content/uploads/2024/04/Express.png" },
-  { name: "FastAPI", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" },
-  { name: "Gemini API", image: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
-  
-  // Databases & Tools
-  { name: "MongoDB", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
-  { name: "PostgreSQL", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
-  { name: "Postman", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
-  { name: "Git", image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  // Languages
+  {
+    name: "Java",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    category: "Languages",
+  },
+  {
+    name: "Python",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    category: "Languages",
+  },
+  {
+    name: "JavaScript",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    category: "Languages",
+  },
+  {
+    name: "TypeScript",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    category: "Languages",
+  },
+  {
+    name: "SQL",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    category: "Languages",
+  },
+
+  // Frontend
+  {
+    name: "Next.js",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    category: "Frontend",
+  },
+  {
+    name: "React",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    category: "Frontend",
+  },
+  {
+    name: "Tailwind CSS",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    category: "Frontend",
+  },
+  {
+    name: "ShadCN UI",
+    image: "https://ui.shadcn.com/favicon.ico",
+    category: "Frontend",
+  },
+  {
+    name: "Redux",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+    category: "Frontend",
+  },
+
+  // Backend & Database
+  {
+    name: "Node.js",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    category: "Backend",
+  },
+  {
+    name: "Express.js",
+    image: "https://www.peanutsquare.com/wp-content/uploads/2024/04/Express.png",
+    category: "Backend",
+  },
+  {
+    name: "MongoDB",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    category: "Backend",
+  },
+  {
+    name: "PostgreSQL",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    category: "Backend",
+  },
+
+  // AI & Data
+  {
+    name: "Pandas",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
+    category: "AI & Data",
+  },
+  {
+    name: "NumPy",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+    category: "AI & Data",
+  },
+  {
+    name: "Scikit-learn",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
+    category: "AI & Data",
+  },
+  {
+    name: "HuggingFace",
+    image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    category: "AI & Data",
+  },
+
+  // Tools & Platforms
+  {
+    name: "Git",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    category: "Tools",
+  },
+  {
+    name: "Vercel",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+    category: "Tools",
+  },
 ];
 
 export const projects = [
