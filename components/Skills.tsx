@@ -72,8 +72,8 @@ export default function Skills() {
         </p>
       </motion.div>
 
-      {/* Single skills grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
+      {/* Single skills grid - CHANGED FROM lg:grid-cols-5 to max out at 4 */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
         {skills.map((skill, index) => (
           <SkillTilt key={skill.name}>
             <motion.div
@@ -136,7 +136,6 @@ export default function Skills() {
           </SkillTilt>
         ))}
       </div>
-
     </section>
   );
 }

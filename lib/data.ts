@@ -107,7 +107,7 @@ export const skills = [
   },
   {
     name: "Vercel",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+    image: "https://cdn.brandfetch.io/vercel.com/fallback/lettermark/theme/dark/h/256/w/256/icon?c=1bfwsmEH20zzEfSNTed",
     category: "Tools",
   },
 ];
