@@ -94,7 +94,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="relative pt-40 pb-24 px-6 min-h-[95vh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative pt-40 pb-24 px-6 min-h-[100vh] flex flex-col items-center justify-center overflow-hidden">
 
       {/* ✅ FULL WIDTH DOT BACKGROUND (FIXED) */}
       <svg
