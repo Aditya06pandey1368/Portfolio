@@ -64,7 +64,7 @@ export default function CodingProfiles() {
       link: "https://www.codechef.com/users/grey_matter_06",
       color: "#5B56E9",
       metrics: [
-        { label: "Max Rating", value: "2★", highlight: true },
+        { label: "Max Rating", value: "3★", highlight: true },
         { label: "Focus", value: "Competitive Logic", highlight: false }
       ]
     }
