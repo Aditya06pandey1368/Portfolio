@@ -55,7 +55,7 @@ export default function CodingProfiles() {
       color: "#FFA116",
       metrics: [
         { label: "Max Rating", value: "1835", highlight: true },
-        { label: "Problems Solved", value: "450+", highlight: false }
+        { label: "Problems Solved", value: "600+", highlight: false }
       ]
     },
     {
