@@ -74,7 +74,7 @@ export const skills = [
   {
     name: "Express.js",
     image:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+      "https://logowik.com/content/uploads/images/express-js1720895488.logowik.com.webp",
     category: "Backend",
   },
   {
@@ -109,7 +109,7 @@ export const skills = [
   },
   {
     name: "RAG",
-    image: "https://cdn.simpleicons.org/searchengin",
+    image: "https://cdn-icons-png.flaticon.com/512/8475/8475078.png",
     category: "AI & Data",
   },
   {
@@ -130,7 +130,7 @@ export const skills = [
   },
   {
     name: "Groq",
-    image: "https://cdn.simpleicons.org/groq",
+    image: "https://www.ciscoinvestments.com/hubfs/Portfolio/groq-logo.png",
     category: "AI & Data",
   },
 
