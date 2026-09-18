@@ -63,7 +63,12 @@ export const skills = [
   },
   {
     name: "Express.js",
-    image: "https://www.peanutsquare.com/wp-content/uploads/2024/04/Express.png",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    category: "Backend",
+  },
+  {
+    name: "FastAPI",
+    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
     category: "Backend",
   },
   {
@@ -79,6 +84,26 @@ export const skills = [
 
   // AI & Data
   {
+    name: "LangChain",
+    image: "https://cdn.simpleicons.org/langchain",
+    category: "AI & Data",
+  },
+  {
+    name: "LangGraph",
+    image: "https://cdn.simpleicons.org/langgraph",
+    category: "AI & Data",
+  },
+  {
+    name: "Sentence Transformers",
+    image: "https://cdn.simpleicons.org/huggingface",
+    category: "AI & Data",
+  },
+  {
+    name: "HuggingFace",
+    image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    category: "AI & Data",
+  },
+  {
     name: "Pandas",
     image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
     category: "AI & Data",
@@ -86,16 +111,6 @@ export const skills = [
   {
     name: "NumPy",
     image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
-    category: "AI & Data",
-  },
-  {
-    name: "Scikit-learn",
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
-    category: "AI & Data",
-  },
-  {
-    name: "HuggingFace",
-    image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
     category: "AI & Data",
   },
 
