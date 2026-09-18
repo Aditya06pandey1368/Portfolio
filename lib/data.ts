@@ -115,6 +115,15 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    title: "JobPilot.AI",
+    description: "Agentic job-discovery platform that parses conversational intent to rank live postings across job sources (Adzuna, Greenhouse) by semantic relevance and resume fit, powered by a deterministic pre-filtering layer and fault-tolerant LLM batch pipeline, with a companion Chrome extension for real-time resume-fit analysis.",
+    image: "https://img.youtube.com/vi/aR-OQv9bZLM/maxresdefault.jpg",
+    video: "https://youtu.be/aR-OQv9bZLM?si=eIsxyeOGFd7XFNNK", 
+    github: "https://github.com/Aditya06pandey1368/JobPilot.AI", 
+    liveLink: "https://jobpilotai-mu.vercel.app/", 
+  },
+  {
+    id: 2,
     title: "EmbedAI",
     description: "B2B SaaS platform that enables businesses to deploy custom AI chatbots trained on their own documents and embed them on any website via a single script tag, powered by a production-grade RAG pipeline with HNSW-indexed vector search and multi-tenant data isolation.",
     image: "https://img.youtube.com/vi/j3iijUtAZ2c/maxresdefault.jpg",
@@ -123,7 +132,7 @@ export const projects = [
     liveLink: "https://embed-ai-nu.vercel.app/", 
   },
   {
-    id: 2,
+    id: 3,
     title: "AI-Grievance Intelligence System",
     description: "An enterprise-grade hybrid microservices platform utilizing FastAPI and Node.js. It features a Semantic Deduplication Layer using vector embeddings to autonomously block spam and route civic complaints with a Human-in-the-Loop ML pipeline.",
     image: "https://img.youtube.com/vi/Fa_mEbzCFNQ/maxresdefault.jpg", // Keep as a fallback
@@ -132,7 +141,7 @@ export const projects = [
     liveLink: null, 
   },
   {
-    id: 3,
+    id: 4,
     title: "ScholarHub - LMS Platform",
     description: "A production-ready Learning Management System featuring Stripe payment infrastructure, Cloudinary video streaming, and an AI tutor powered by the Gemini API. Optimized with MongoDB Compound Indexing to reduce query times by 40%.",
     image: "https://img.youtube.com/vi/s6PmXxvdVZ0/maxresdefault.jpg", // Keep as a fallback
