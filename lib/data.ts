@@ -1,47 +1,55 @@
 // lib/data.ts
 
 export const skills = [
-  // Languages
+  // Languages — 5
   {
     name: "Java",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     category: "Languages",
   },
   {
     name: "Python",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     category: "Languages",
   },
   {
     name: "JavaScript",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     category: "Languages",
   },
   {
     name: "TypeScript",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     category: "Languages",
   },
   {
     name: "SQL",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
     category: "Languages",
   },
 
-  // Frontend
+  // Frontend — 5
   {
     name: "Next.js",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     category: "Frontend",
   },
   {
     name: "React",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     category: "Frontend",
   },
   {
     name: "Tailwind CSS",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     category: "Frontend",
   },
   {
@@ -50,39 +58,45 @@ export const skills = [
     category: "Frontend",
   },
   {
-    name: "Redux",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+    name: "Redux Toolkit",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
     category: "Frontend",
   },
 
-  // Backend & Database
+  // Backend & Database — 5
   {
     name: "Node.js",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     category: "Backend",
   },
   {
     name: "Express.js",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
     category: "Backend",
   },
   {
     name: "FastAPI",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
     category: "Backend",
   },
   {
     name: "MongoDB",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
     category: "Backend",
   },
   {
     name: "PostgreSQL",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     category: "Backend",
   },
 
-  // AI & Data
+  // AI & Data — 7
   {
     name: "LangChain",
     image: "https://cdn.simpleicons.org/langchain",
@@ -94,35 +108,43 @@ export const skills = [
     category: "AI & Data",
   },
   {
+    name: "RAG",
+    image: "https://cdn.simpleicons.org/searchengin",
+    category: "AI & Data",
+  },
+  {
     name: "Sentence Transformers",
     image: "https://cdn.simpleicons.org/huggingface",
     category: "AI & Data",
   },
   {
-    name: "HuggingFace",
-    image: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+    name: "Supabase",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
     category: "AI & Data",
   },
   {
-    name: "Pandas",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
+    name: "pgvector",
+    image: "https://cdn.simpleicons.org/postgresql",
     category: "AI & Data",
   },
   {
-    name: "NumPy",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+    name: "Groq",
+    image: "https://cdn.simpleicons.org/groq",
     category: "AI & Data",
   },
 
-  // Tools & Platforms
+  // Tools & Platforms — 2
   {
     name: "Git",
-    image: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
     category: "Tools",
   },
   {
     name: "Vercel",
-    image: "https://cdn.brandfetch.io/vercel.com/fallback/lettermark/theme/dark/h/256/w/256/icon?c=1bfwsmEH20zzEfSNTed",
+    image:
+      "https://cdn.brandfetch.io/vercel.com/fallback/lettermark/theme/dark/h/256/w/256/icon?c=1bfwsmEH20zzEfSNTed",
     category: "Tools",
   },
 ];
