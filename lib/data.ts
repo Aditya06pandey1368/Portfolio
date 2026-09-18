@@ -118,7 +118,7 @@ export const projects = [
     title: "JobPilot.AI",
     description: "Agentic job-discovery platform that parses conversational intent to rank live postings across job sources (Adzuna, Greenhouse) by semantic relevance and resume fit, powered by a deterministic pre-filtering layer and fault-tolerant LLM batch pipeline, with a companion Chrome extension for real-time resume-fit analysis.",
     image: "https://img.youtube.com/vi/aR-OQv9bZLM/maxresdefault.jpg",
-    video: "https://youtu.be/aR-OQv9bZLM?si=eIsxyeOGFd7XFNNK", 
+    video: "https://www.youtube.com/watch?v=aR-OQv9bZLM", 
     github: "https://github.com/Aditya06pandey1368/JobPilot.AI", 
     liveLink: "https://jobpilotai-mu.vercel.app/", 
   },
